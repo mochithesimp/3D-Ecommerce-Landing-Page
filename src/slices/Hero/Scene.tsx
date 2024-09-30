@@ -7,12 +7,15 @@ import { Group } from "three";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useStore } from "@/hooks/useStore";
+
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 type Props = {}
 
 export default function Scene({ }: Props) {
+    const isReady = useStore((state) => state.isReady)
 
     const can1Ref = useRef<Group>(null)
     const can2Ref = useRef<Group>(null)
@@ -38,6 +41,8 @@ export default function Scene({ }: Props) {
             !can2GroupRef.current ||
             !groupRef.current
         ) return;
+
+        isReady();
 
         //Animation
         //Set can starting location
