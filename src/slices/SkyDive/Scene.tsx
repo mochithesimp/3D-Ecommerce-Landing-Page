@@ -3,7 +3,7 @@
 import FloatingCan from "@/components/FloatingCan"
 import { useMediaQuery } from "@/hooks/useMediaQuery"
 import { Content } from "@prismicio/client"
-import { Cloud, Clouds, Environment, Text } from "@react-three/drei"
+import { Cloud, Clouds, Environment, OrbitControls, Text } from "@react-three/drei"
 import { useRef } from "react"
 import * as THREE from 'three'
 import gsap from 'gsap';
